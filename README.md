@@ -2,8 +2,8 @@
 
 A redesigned FIRE (Financial Independence, Retire Early) calculator with an AI-powered chat assistant. Built as an internship assignment for UseMoney.
 
-Hosted Link : https://usemoney-ai.vercel.app/
-Github Link : https://github.com/69Igris/usemoney-ai
+1. Hosted Link : https://usemoney-ai.vercel.app/
+2. Github Link : https://github.com/69Igris/usemoney-ai
 
 ## What's new vs the reference
 
