@@ -4,8 +4,8 @@ A redesigned FIRE (Financial Independence, Retire Early) calculator with an AI-p
 
 ## What's new vs the reference
 
-1. **Chat-driven UX** — Every action available in the form (set parameters, manage assets, edit expenses, save/load/compare scenarios) can also be performed via natural language chat. The chat uses Groq's `llama-3.3-70b-versatile` model with function calling.
-2. **Scenario comparison** — Overlay multiple saved scenarios on the wealth projection chart side-by-side.
+1. **Chat-driven UX** — Every action available in the form (set parameters, manage assets, edit expenses, save/load/compare scenarios) can also be performed via natural language chat. I have used Groq's `llama-3.3-70b-versatile` model with function calling in the Chat.
+2. **Scenario comparison** — Can overlay multiple saved scenarios on the wealth projection chart side-by-side.
 3. **Refined visual hierarchy** — KPI cards weighted by importance, cleaner spacing, removed market ticker noise from the planning page.
 4. **Persistent state** — Scenarios and parameters survive page refreshes via localStorage.
 

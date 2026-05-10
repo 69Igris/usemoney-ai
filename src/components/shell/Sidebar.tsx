@@ -1,68 +1,10 @@
-import {
-  Activity,
-  BookOpen,
-  Brain,
-  Briefcase,
-  Calculator,
-  Eye,
-  FileText,
-  Flame,
-  MoreHorizontal,
-  Plus,
-  Search,
-  Target,
-  TrendingUp,
-  Zap,
-  type LucideIcon,
-} from 'lucide-react';
+import { MoreHorizontal, Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-interface NavItem {
-  label: string;
-  icon: LucideIcon;
-  active?: boolean;
-}
-
-interface NavSection {
-  label: string;
-  items: NavItem[];
-}
-
-const sections: NavSection[] = [
-  {
-    label: 'Workspace',
-    items: [
-      { label: 'StockSage', icon: TrendingUp },
-      { label: 'Holdings', icon: Briefcase },
-      { label: 'Watchlists', icon: Eye },
-      { label: 'Tradebook', icon: BookOpen },
-      { label: 'Portfolio Roast', icon: Flame },
-    ],
-  },
-  {
-    label: 'Discover',
-    items: [
-      { label: 'Markets', icon: Activity },
-      { label: 'Screener', icon: Search },
-      { label: 'Strategies', icon: Zap },
-      { label: 'Research', icon: Brain },
-    ],
-  },
-  {
-    label: 'Tools',
-    items: [
-      { label: 'Paper Trading', icon: FileText },
-      { label: 'FIRE Calculator', icon: Target, active: true },
-      { label: 'Calculators', icon: Calculator },
-      { label: 'Risk Report', icon: FileText },
-      { label: 'Tax Report', icon: FileText },
-    ],
-  },
-];
+import { NAV_SECTIONS } from './navConfig';
 
 export function Sidebar() {
   return (
-    <aside className="flex h-screen w-[220px] shrink-0 flex-col border-r border-white/10 bg-[#0a0a0b]">
+    <aside className="hidden h-screen w-[220px] shrink-0 flex-col border-r border-white/10 bg-[#0a0a0b] lg:flex">
       {/* Logo */}
       <div className="flex h-14 items-center gap-2 border-b border-white/10 px-4">
         <div className="grid h-7 w-7 place-items-center rounded-md bg-emerald-500 text-sm font-bold text-black">
@@ -86,7 +28,7 @@ export function Sidebar() {
 
       {/* Nav sections */}
       <nav className="flex-1 overflow-y-auto px-3 py-4">
-        {sections.map((section) => (
+        {NAV_SECTIONS.map((section) => (
           <div key={section.label} className="mb-4">
             <div className="mb-1 px-2 text-[10px] font-medium uppercase tracking-wider text-white/40">
               {section.label}

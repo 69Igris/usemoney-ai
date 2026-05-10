@@ -14,6 +14,7 @@ interface KpiCardProps {
   subtext?: string;
   gradientClassName: string;
   prefix?: ReactNode;
+  className?: string;
 }
 
 function KpiCard({
@@ -23,21 +24,23 @@ function KpiCard({
   subtext,
   gradientClassName,
   prefix,
+  className,
 }: KpiCardProps) {
   return (
     <div
       className={cn(
-        'relative min-h-[120px] overflow-hidden rounded-xl border border-white/[0.08] bg-[#141416] p-5 transition-colors hover:border-white/[0.12]',
+        'relative overflow-hidden rounded-xl border border-white/[0.08] bg-[#141416] p-3 transition-colors hover:border-white/[0.12] lg:min-h-[120px] lg:p-5',
         'before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:h-24 before:bg-gradient-to-b before:to-transparent',
-        gradientClassName
+        gradientClassName,
+        className
       )}
     >
-      <div className="relative text-xs font-medium uppercase tracking-wider text-white/50">
+      <div className="relative text-[10px] font-medium uppercase tracking-wider text-white/50 lg:text-xs">
         {label}
       </div>
       <div
         className={cn(
-          'relative mt-3 flex items-center gap-2 text-2xl font-bold tracking-tight',
+          'relative mt-2 flex items-center gap-2 text-xl font-bold tracking-tight lg:mt-3 lg:text-3xl',
           valueClassName
         )}
       >
@@ -45,7 +48,9 @@ function KpiCard({
         <span className="truncate">{value}</span>
       </div>
       {subtext && (
-        <div className="relative mt-2 text-xs text-white/40">{subtext}</div>
+        <div className="relative mt-2 hidden text-xs text-white/40 sm:block">
+          {subtext}
+        </div>
       )}
     </div>
   );
@@ -75,7 +80,7 @@ export function FireHero() {
     : 'before:from-emerald-500/10';
 
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-5">
+    <div className="grid grid-cols-2 gap-2 lg:grid-cols-5 lg:gap-3">
       <KpiCard
         label="FIRE Number"
         value={formatINR(result.fireNumber)}
@@ -110,6 +115,7 @@ export function FireHero() {
         valueClassName={statusColor}
         subtext={result.statusMessage}
         gradientClassName={statusGradient}
+        className="col-span-2 lg:col-span-1"
         prefix={
           <span
             className={cn('inline-block h-2.5 w-2.5 rounded-full', statusDot)}

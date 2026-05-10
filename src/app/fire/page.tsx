@@ -11,6 +11,7 @@ import { AssetAllocationPanel } from '@/components/fire/AssetAllocationPanel';
 import { ExpensesTable } from '@/components/fire/ExpensesTable';
 import { ScrollHint } from '@/components/fire/ScrollHint';
 import { useFireStore } from '@/lib/store/fireStore';
+import { cn } from '@/lib/utils';
 
 export default function FirePage() {
   const isChatRailOpen = useFireStore((s) => s.isChatRailOpen);
@@ -21,8 +22,10 @@ export default function FirePage() {
       <div className="flex flex-1 flex-col">
         <TopBar />
         <main
-          className="flex-1 overflow-y-auto px-8 py-6 transition-[padding] duration-300"
-          style={{ paddingRight: isChatRailOpen ? 412 : 32 }}
+          className={cn(
+            'flex-1 overflow-y-auto px-4 pt-4 pb-24 transition-[padding] duration-300 lg:px-8 lg:pt-6 lg:pb-6',
+            isChatRailOpen && 'lg:pr-[412px]'
+          )}
         >
           <div className="mx-auto max-w-[1400px] space-y-6">
             <ScenarioBar />

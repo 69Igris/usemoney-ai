@@ -1,6 +1,6 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
   CartesianGrid,
   ComposedChart,
@@ -64,22 +64,31 @@ export function WealthProjectionChart() {
     });
   }, [result.projection, comparisons]);
 
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 1024);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
   const ageTicks = useMemo(() => {
+    const step = isMobile ? 10 : 5;
     const ticks: number[] = [];
     for (let a = parameters.currentAge; a <= parameters.lifeExpectancy; a++) {
       if (
         a === parameters.currentAge ||
         a === parameters.lifeExpectancy ||
-        a % 5 === 0
+        a % step === 0
       ) {
         ticks.push(a);
       }
     }
     return ticks;
-  }, [parameters.currentAge, parameters.lifeExpectancy]);
+  }, [parameters.currentAge, parameters.lifeExpectancy, isMobile]);
 
   return (
-    <div className="rounded-xl border border-white/[0.08] bg-[#141416] p-6">
+    <div className="min-w-0 rounded-xl border border-white/[0.08] bg-[#141416] p-4 sm:p-6">
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
           <h2 className="flex items-center gap-2 text-xl font-semibold tracking-tight text-white">

@@ -82,21 +82,21 @@ export function ScenarioBar() {
           )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <Button
             variant="outline"
-            size="lg"
+            size="sm"
             onClick={() => setResetOpen(true)}
           >
             <RotateCcw />
-            Reset
+            <span className="hidden sm:inline">Reset</span>
           </Button>
 
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="sm">
                 <FolderOpen />
-                Load
+                <span className="hidden sm:inline">Load</span>
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
@@ -119,21 +119,22 @@ export function ScenarioBar() {
 
           <Button
             variant="outline"
-            size="lg"
+            size="sm"
             disabled={savedScenarios.length < 1}
             onClick={() => setCompareOpen(true)}
           >
             <BarChart3 />
-            Compare
+            <span className="hidden sm:inline">Compare</span>
           </Button>
 
           <Button
-            size="lg"
+            size="sm"
             onClick={() => setSaveOpen(true)}
             className="bg-emerald-500 text-black hover:bg-emerald-400"
           >
             <Save />
-            Save Scenario
+            <span className="hidden sm:inline">Save Scenario</span>
+            <span className="sm:hidden">Save</span>
           </Button>
         </div>
       </div>

@@ -67,7 +67,7 @@ export function ExpensesTable() {
             <TableHead className="text-right text-xs uppercase tracking-wider text-white/40">
               Monthly
             </TableHead>
-            <TableHead className="text-right text-xs uppercase tracking-wider text-white/40">
+            <TableHead className="hidden text-right text-xs uppercase tracking-wider text-white/40 sm:table-cell">
               Inflation
             </TableHead>
             <TableHead className="w-24 text-right text-xs uppercase tracking-wider text-white/40">
@@ -85,7 +85,7 @@ export function ExpensesTable() {
               <TableCell className="text-right tabular-nums text-white/90">
                 {formatINRFull(e.monthlyAmount)}
               </TableCell>
-              <TableCell className="text-right tabular-nums text-white/70">
+              <TableCell className="hidden text-right tabular-nums text-white/70 sm:table-cell">
                 {formatPercent(e.inflationRate)}
               </TableCell>
               <TableCell className="text-right">
@@ -115,7 +115,7 @@ export function ExpensesTable() {
             <TableCell className="text-right font-semibold tabular-nums text-white">
               {formatINRFull(total)}
             </TableCell>
-            <TableCell className="text-right font-semibold tabular-nums text-white/80">
+            <TableCell className="hidden text-right font-semibold tabular-nums text-white/80 sm:table-cell">
               {formatPercent(avgInflation)}
             </TableCell>
             <TableCell />

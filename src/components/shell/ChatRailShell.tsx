@@ -178,11 +178,11 @@ export function ChatRailShell() {
         {isOpen && (
           <motion.aside
             key="chat-rail"
-            initial={{ x: 380 }}
+            initial={{ x: '100%' }}
             animate={{ x: 0 }}
-            exit={{ x: 380 }}
+            exit={{ x: '100%' }}
             transition={SPRING}
-            className="fixed right-0 top-0 z-30 flex h-screen w-[380px] flex-col border-l border-white/[0.08] bg-[#0a0a0b]"
+            className="fixed right-0 top-0 z-50 flex h-screen w-full flex-col border-l border-white/[0.08] bg-[#0a0a0b] lg:w-[380px]"
           >
             <header className="flex h-14 shrink-0 items-center justify-between border-b border-white/[0.08] px-4">
               <div className="flex items-center gap-2">
