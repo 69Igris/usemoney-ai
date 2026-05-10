@@ -2,6 +2,9 @@
 
 A redesigned FIRE (Financial Independence, Retire Early) calculator with an AI-powered chat assistant. Built as an internship assignment for UseMoney.
 
+Hosted Link : https://usemoney-ai.vercel.app/
+Github Link : https://github.com/69Igris/usemoney-ai
+
 ## What's new vs the reference
 
 1. **Chat-driven UX** — Every action available in the form (set parameters, manage assets, edit expenses, save/load/compare scenarios) can also be performed via natural language chat. I have used Groq's `llama-3.3-70b-versatile` model with function calling in the Chat.
