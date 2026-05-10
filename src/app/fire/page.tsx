@@ -9,6 +9,7 @@ import { WealthProjectionChart } from '@/components/fire/WealthProjectionChart';
 import { ParametersPanel } from '@/components/fire/ParametersPanel';
 import { AssetAllocationPanel } from '@/components/fire/AssetAllocationPanel';
 import { ExpensesTable } from '@/components/fire/ExpensesTable';
+import { ScrollHint } from '@/components/fire/ScrollHint';
 import { useFireStore } from '@/lib/store/fireStore';
 
 export default function FirePage() {
@@ -33,6 +34,7 @@ export default function FirePage() {
             </div>
             <ExpensesTable />
           </div>
+          <ScrollHint />
         </main>
       </div>
       <ChatRailShell />
